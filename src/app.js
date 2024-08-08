@@ -12,5 +12,10 @@ app.use(express.urlencoded({extended: true, limit: "16kb"})) // parses incoming 
 app.use(express.static("public")) //storing pictures pdf in public dirctory
 app.use(cookieParser()) //access and doing crud operations on the user's browser cookies
 
+// routes
+import userRouter from './routes/user.routes.js'
+
+//routes declaration
+app.use("/api/v1/users", userRouter) //whenever you u will have /api/v1/users url you will be passed to userRouter
 
 export default app
