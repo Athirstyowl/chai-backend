@@ -1,4 +1,4 @@
-import {v2 as cloudinary} from cloudinary
+import {v2 as cloudinary} from "cloudinary"
 import fs from 'fs' // fs is filesystem which is a package in node.js allowing us to work with files (read, write, remove, permission)
 
 cloudinary.config({
