@@ -64,7 +64,8 @@ userSchema.pre("save", async function(next) {
 userSchema.methods.isPasswordCorrect = async function(password){
     return await bcrypt.compare(password, this.password)
 }
-
+//Note: AccessToken- short, expires sooner | Validate user
+// RefreshToken- long lived tokens | refresh token is saved in db and on refresh its checked and if true new access token is given
 userSchema.methods.generateAccessToken = function() {
     return jwt.sign(
         {
